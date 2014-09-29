@@ -69,7 +69,7 @@ Factory.prototype.create = function () {
 
          // Chrome, MSIE, newer Firefox
          if ("WebSocket" in window) {
-            
+
             if (self._options.protocols) {
                websocket = new window.WebSocket(self._options.url, self._options.protocols);
             } else {
@@ -133,7 +133,7 @@ Factory.prototype.create = function () {
 
       (function () {
 
-         var WebSocket = require('ws'); // https://github.com/einaros/ws
+         var WebSocket = require('nodejs-websocket');
          var websocket;
 
          var protocols;
@@ -142,14 +142,16 @@ Factory.prototype.create = function () {
             if (Array.isArray(protocols)) {
                protocols = protocols.join(',');
             }
-            websocket = new WebSocket(self._options.url, {protocol: protocols});
+            websocket = WebSocket.connect(self._options.url, function() {
+               transport.onopen();
+            });
          } else {
-            websocket = new WebSocket(self._options.url);
+            websocket = WebSocket.connect(self._options.url);
          }
 
          transport.send = function (msg) {
             var payload = JSON.stringify(msg);
-            websocket.send(payload, {binary: false});
+            websocket.sendText(payload);
          };
 
          transport.close = function (code, reason) {
@@ -160,13 +162,9 @@ Factory.prototype.create = function () {
             transport.onopen();
          });
 
-         websocket.on('message', function (data, flags) {
-            if (flags.binary) {
-               // FIXME!
-            } else {
-               var msg = JSON.parse(data);
-               transport.onmessage(msg);
-            }
+         websocket.on('text', function (data) {
+            var msg = JSON.parse(data);
+            transport.onmessage(msg);
          });
 
          // FIXME: improve mapping to WS API for the following

@@ -11,9 +11,6 @@
 //
 ///////////////////////////////////////////////////////////////////////////////
 
-// Polyfills for <= IE9
-require('./polyfill.js');
-
 var pjson = require('../package.json');
 
 var when = require('when');
@@ -26,7 +23,6 @@ if ('AUTOBAHN_DEBUG' in global && AUTOBAHN_DEBUG) {
       console.log("AutobahnJS debug enabled");
    }
 }
-
 var util = require('./util.js');
 var log = require('./log.js');
 var session = require('./session.js');
@@ -34,7 +30,6 @@ var connection = require('./connection.js');
 var configure = require('./configure.js');
 
 var persona = require('./auth/persona.js');
-var cra = require('./auth/cra.js');
 
 exports.version = pjson.version;
 
@@ -52,7 +47,6 @@ exports.Registration = session.Registration;
 exports.Publication = session.Publication;
 
 exports.auth_persona = persona.auth;
-exports.auth_cra = cra;
 
 exports.when = when;
 

@@ -349,7 +349,7 @@ Connection.prototype.open = function () {
          } else {
             reason = "closed";
          }
-        
+
          var next_retry = self._autoreconnect_advance();
 
          // fire app code handler
