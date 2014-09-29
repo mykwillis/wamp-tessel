@@ -60,7 +60,7 @@ function newid () {
    // BUGBUG: during JSON serialization. Until that's fixed, use a smaller
    // BUGBUG: range.
    // return Math.floor(Math.random() * 9007199254740992);
-   return Math.floor(Math.random() * 99999999999);
+   return Math.floor(Math.random() * 999999999);
 }
 
 
