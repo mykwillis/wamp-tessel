@@ -29,8 +29,6 @@ var session = require('./session.js');
 var connection = require('./connection.js');
 var configure = require('./configure.js');
 
-var persona = require('./auth/persona.js');
-
 exports.version = pjson.version;
 
 exports.transports = configure.transports;
@@ -45,8 +43,6 @@ exports.Error = session.Error;
 exports.Subscription = session.Subscription;
 exports.Registration = session.Registration;
 exports.Publication = session.Publication;
-
-exports.auth_persona = persona.auth;
 
 exports.when = when;
 
