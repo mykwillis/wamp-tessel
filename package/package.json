@@ -1,5 +1,5 @@
 {
-  "name": "WAMP-Tessel",
+  "name": "wamp-tessel",
   "version": "0.1.0",
   "description": "An implementation of The Web Application Messaging Protocol (WAMP) for Tessel.",
   "main": "index.js",
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/mykwillis/WAMP-Tessel.git"
+    "url": "git://github.com/mykwillis/wamp-tessel.git"
   },
   "keywords": [
     "WAMP",
@@ -20,6 +20,6 @@
     "PubSub",
     "Tessel"
   ],
-  "author": "Organiq, Inc.",
+  "author": "Myk Willis & Company, LLC",
   "license": "MIT"
 }
