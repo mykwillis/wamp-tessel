@@ -5,10 +5,10 @@
 **Autobahn**|JS is a robust library that can run in multiple environments, including web browsers and in NodeJS, but it can not be used on Tessel because of its large size (by microcontroller standards) and its use of unsupported libraries.
 
 WAMP-Tessel differs most notably from Autobahn|JS in these ways:
-1. It is compatible with the Tessel microcontroller;
-1. It is NOT compatible with web browser environments;
-2. The only supported transport is WebSockets;
-3. It supports only the WAMP Basic Profile (https://github.com/tavendo/WAMP/blob/master/spec/basic.md) - no encryption or other Advanced Profile features are supported.
+ * It is compatible with the Tessel microcontroller;
+ * It is NOT compatible with web browser environments;
+ * The only supported transport is WebSockets;
+ * It supports only the WAMP Basic Profile (https://github.com/tavendo/WAMP/blob/master/spec/basic.md) - no encryption or other Advanced Profile features are supported.
 
 It is licensed under the [MIT licensed](/LICENSE).
 
@@ -24,7 +24,7 @@ The following example implements all four roles that **Autobahn**|JS offers
 **The code runs as part of your Tessel project in Node.js!**
 
 ```javascript
-var wamp = require('WAMP-Tessel');
+var wamp = require('wamp-tessel');
 
 var connection = new wamp.Connection({url: 'ws://127.0.0.1:9000/', realm: 'realm1'});
 
@@ -60,7 +60,7 @@ connection.open();
 
 WAMP-Tessel is available via the Node package manager [here](https://www.npmjs.org/package/WAMP-Tessel). To install:
 
-  npm install WAMP-Tessel
+    npm install wamp-tessel
 
 
 ## More information
