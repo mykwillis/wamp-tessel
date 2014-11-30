@@ -1,6 +1,5 @@
-.sconsign.dblite
-*.sublime-workspace
-build
+npm-debug.log
 node_modules
-*.log
-*.pyc
+.*.swp
+.lock-*
+build

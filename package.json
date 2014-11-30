@@ -1,6 +1,6 @@
 {
   "name": "wamp-tessel",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "An implementation of The Web Application Messaging Protocol (WAMP) for Tessel.",
   "main": "index.js",
   "scripts": {
